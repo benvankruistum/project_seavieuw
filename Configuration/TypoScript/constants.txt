@@ -1,0 +1,14 @@
+plugin.tx_projectseavieuw {
+	view {
+		# cat=plugin.tx_projectseavieuw/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:projectseavieuw/Resources/Private/Templates/
+		# cat=plugin.tx_projectseavieuw/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:projectseavieuw/Resources/Private/Partials/
+		# cat=plugin.tx_projectseavieuw/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:projectseavieuw/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_projectseavieuw//a; type=string; label=Default storage PID
+		storagePid =
+	}
+}

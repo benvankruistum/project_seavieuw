@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for the project_seavieuw extension in the FRONTEND</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tx_projectseavieuw_domain_model_project">Project</label>
+			<label index="tx_projectseavieuw_domain_model_project.title">title</label>
+			<label index="tx_projectseavieuw_domain_model_project.media">media</label>
+			<label index="tx_projectseavieuw_domain_model_media">Media</label>
+			<label index="tx_projectseavieuw_domain_model_media.layout">layout</label>
+			<label index="tx_projectseavieuw_domain_model_media.media">media</label>
+			<label index="tx_projectseavieuw_domain_model_media.youtube_key">youtubeKey</label>
+			<label index="tx_projectseavieuw_domain_model_media.text">text</label>
+		</languageKey>
+	</data>
+</T3locallang>

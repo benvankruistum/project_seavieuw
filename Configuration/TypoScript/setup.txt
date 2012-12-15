@@ -1,0 +1,39 @@
+plugin.tx_projectseavieuw {
+	view {
+		templateRootPath = {$plugin.tx_projectseavieuw.view.templateRootPath}
+		partialRootPath = {$plugin.tx_projectseavieuw.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_projectseavieuw.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_projectseavieuw.persistence.storagePid}
+	}
+	features {
+		# uncomment the following line to enable the new Property Mapper.
+		# rewrittenPropertyMapper = 1
+	}
+}
+
+plugin.tx_projectseavieuw._CSS_DEFAULT_STYLE (
+	textarea.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-projectseavieuw table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-projectseavieuw table th {
+		font-weight:bold;
+	}
+
+	.tx-projectseavieuw table td {
+		vertical-align:top;
+	}
+)
