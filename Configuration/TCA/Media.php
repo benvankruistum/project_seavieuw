@@ -103,6 +103,7 @@ $TCA['tx_projectseavieuw_domain_model_media'] = array(
 					array('LLL:EXT:projectseavieuw/Resources/Private/Language/locallang_db.xml:tx_projectseavieuw_domain_model_media.layout.option.1', 'layout2'),
 					array('LLL:EXT:projectseavieuw/Resources/Private/Language/locallang_db.xml:tx_projectseavieuw_domain_model_media.layout.option.2', 'layout3'),
 					array('LLL:EXT:projectseavieuw/Resources/Private/Language/locallang_db.xml:tx_projectseavieuw_domain_model_media.layout.option.3', 'layout4'),
+					array('LLL:EXT:projectseavieuw/Resources/Private/Language/locallang_db.xml:tx_projectseavieuw_domain_model_media.layout.option.4', 'layout5'),
 				),
 				'minitems' => 0,
 				'maxitems' => 1,

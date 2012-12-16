@@ -19,6 +19,7 @@
 			<label index="tx_projectseavieuw_domain_model_media.layout.option.1">Layout 1</label>
 			<label index="tx_projectseavieuw_domain_model_media.layout.option.2">Layout 2</label>
 			<label index="tx_projectseavieuw_domain_model_media.layout.option.3">Layout 3</label>
+			<label index="tx_projectseavieuw_domain_model_media.layout.option.4">Layout 4</label>
 
 			<label index="tx_projectseavieuw_domain_model_media.media">Media</label>
 			<label index="tx_projectseavieuw_domain_model_media.youtube_key">Youtube Key</label>

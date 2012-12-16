@@ -6,6 +6,6 @@
 	<h1>{project.title}</h1>
 	{media.layout}
 	<f:for each="{project.media}" as="media">
-		<f:render partial="Project/{media.layout}" arguments="{media : media}"/>
+		<f:render partial="Project/{media.layout}" arguments="{media : media, title:project.title}"/>
 	</f:for>
 </f:section>

@@ -1,1 +1,11 @@
-<h2>Layout 3</h2>
+<div class="row3">
+	<div class="box2">
+		<div class="image images6"><f:image src="{projectseavieuw:mediaposition(position:'0',media:'{media.media}')}" width="150" height="150" alt="" /></div>
+		<div class="image images7"><f:image src="{projectseavieuw:mediaposition(position:'1',media:'{media.media}')}" width="150" height="150" alt="" /></div>
+	</div>
+	<div class="video">
+		<f:render partial="Project/video" arguments="{key :media.youtubeKey , width : '500'  , height: '500' }"/>
+	</div>
+	<div class="image images8"><f:image src="{projectseavieuw:mediaposition(position:'2',media:'{media.media}')}" width="150" height="150" alt="" /></div>
+	<div class="image images9"><f:image src="{projectseavieuw:mediaposition(position:'3',media:'{media.media}')}" width="150" height="150" alt="" /></div>
+</div>

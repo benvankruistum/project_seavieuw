@@ -1,6 +1,7 @@
 {namespace projectseavieuw=Tx_Projectseavieuw_ViewHelpers}
-<h2>Layout 2</h2>
 
-<f:render partial="Project/video" arguments="{key :media.youtubeKey , width : '500'  , height: '500' }"/>
-
-<f:image src="{projectseavieuw:mediaposition(position:'0',media:'{media.media}')}" width="150" height="150" alt="" />
+<div class="row2">
+	<div class="image images3"><f:image src="{projectseavieuw:mediaposition(position:'0',media:'{media.media}')}" width="150" height="150" alt="" /></div>
+	<div class="image images4"><f:image src="{projectseavieuw:mediaposition(position:'1',media:'{media.media}')}" width="150" height="150" alt="" /></div>
+	<div class="image images5"><f:image src="{projectseavieuw:mediaposition(position:'2',media:'{media.media}')}" width="150" height="150" alt="" /></div>
+</div>
