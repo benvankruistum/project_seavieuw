@@ -62,6 +62,13 @@ class Tx_Projectseavieuw_Domain_Model_Media extends Tx_Extbase_DomainObject_Abst
 	protected $text;
 
 	/**
+	 * uploadFolderPath
+	 *
+	 * @var string
+	 */
+	protected $uploadFolderPath = 'uploads/tx_projects_seavieuw/';
+
+	/**
 	 * Returns the layout
 	 *
 	 * @return string $layout
@@ -83,10 +90,10 @@ class Tx_Projectseavieuw_Domain_Model_Media extends Tx_Extbase_DomainObject_Abst
 	/**
 	 * Returns the media
 	 *
-	 * @return string $media
+	 * @return array $media
 	 */
 	public function getMedia() {
-		return $this->media;
+		return Tx_Projectseavieuw_Utility_ToolBox::mediaStringToArray($this->media,$this->uploadFolderPath);
 	}
 
 	/**
@@ -96,10 +103,7 @@ class Tx_Projectseavieuw_Domain_Model_Media extends Tx_Extbase_DomainObject_Abst
 	 * @return void
 	 */
 	public function setMedia($media) {
-		$returnMedia = Tx_Projectseavieuw_Utility_ToolBox::mediaStringToArray($media);
-		var_dump($returnMedia);
-		die();
-		$this->media = $returnMedia;
+		$this->media = $media;
 	}
 
 	/**

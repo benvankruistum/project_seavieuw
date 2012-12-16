@@ -24,7 +24,7 @@ class Tx_Projectseavieuw_ViewHelpers_MediapositionViewHelper extends Tx_Fluid_Co
 	 * @return string html tag
 	 */
 	public function render() {
-		return '<span>MediaPosition Helper</span>';
+		return $this->arguments['media'][$this->arguments['position']];
 	}
 }
 ?>

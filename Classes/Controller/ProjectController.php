@@ -57,7 +57,6 @@ class Tx_Projectseavieuw_Controller_ProjectController extends Tx_Extbase_MVC_Con
 	 */
 	public function listAction() {
 		$projects = $this->projectRepository->findAll();
-
 		$this->view->assign('projects', $projects);
 	}
 

@@ -54,7 +54,6 @@ class Tx_Projectseavieuw_Utility_ToolBox {
 		$media = array();
 
 		foreach ($mediaArray as $key => $medium) {
-
 			//Check if media is an image first found image is used
 			$ext = pathinfo($uploadFolder . $medium, PATHINFO_EXTENSION);
 			if ($extensionCheck && in_array($ext, $this->supportedImages)) {
