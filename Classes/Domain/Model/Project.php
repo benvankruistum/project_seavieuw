@@ -42,6 +42,13 @@ class Tx_Projectseavieuw_Domain_Model_Project extends Tx_Extbase_DomainObject_Ab
 	protected $title;
 
 	/**
+	 * title
+	 *
+	 * @var string
+	 */
+	protected $password;
+
+	/**
 	 * media
 	 *
 	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_Projectseavieuw_Domain_Model_Media>
@@ -89,6 +96,25 @@ class Tx_Projectseavieuw_Domain_Model_Project extends Tx_Extbase_DomainObject_Ab
 	 */
 	public function setTitle($title) {
 		$this->title = $title;
+	}
+
+	/**
+	 * Returns the password
+	 *
+	 * @return string $password
+	 */
+	public function getPassword() {
+		return $this->password;
+	}
+
+	/**
+	 * Sets the password
+	 *
+	 * @param string $password
+	 * @return void
+	 */
+	public function setPassword($password) {
+		$this->password = $password;
 	}
 
 	/**

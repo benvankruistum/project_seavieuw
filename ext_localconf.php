@@ -5,9 +5,9 @@ if (!defined('TYPO3_MODE')) {
 
 Tx_Extbase_Utility_Extension::configurePlugin(
 	$_EXTKEY,
-	'Projectseavieuw',
+	'Pi1',
 	array(
-		'Project' => 'list, show',
+		'Project' => 'show',
 		
 	),
 	// non-cacheable actions

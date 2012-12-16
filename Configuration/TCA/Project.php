@@ -6,13 +6,13 @@ if (!defined ('TYPO3_MODE')) {
 $TCA['tx_projectseavieuw_domain_model_project'] = array(
 	'ctrl' => $TCA['tx_projectseavieuw_domain_model_project']['ctrl'],
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, media',
+		'showRecordFieldList' => 'hidden, title, password, media',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, media,--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.access,starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden, title,password;;1, media,--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.access,starttime, endtime'),
 	),
 	'palettes' => array(
-		'1' => array('showitem' => ''),
+		'1' => array('showitem' => 'locked','canNotCollapse' => TRUE),
 	),
 	'columns' => array(
 		'sys_language_uid' => array(
@@ -102,6 +102,23 @@ $TCA['tx_projectseavieuw_domain_model_project'] = array(
 				'eval' => 'trim,required'
 			),
 		),
+		'password' => array(
+			'exclude' => 0,
+			'label' => 'LLL:EXT:projectseavieuw/Resources/Private/Language/locallang_db.xml:tx_projectseavieuw_domain_model_project.password',
+			'config' => array(
+				'type' => 'input',
+				'size' => 30,
+				'eval' => 'trim'
+			),
+		),
+		'locked' => array(
+			'exclude' => 0,
+			'label' => 'LLL:EXT:projectseavieuw/Resources/Private/Language/locallang_db.xml:tx_projectseavieuw_domain_model_project.locked',
+			'config' => array(
+				'type' => 'check',
+				'default' => 0
+			),
+		),
 		'media' => array(
 			'exclude' => 0,
 			'label' => 'LLL:EXT:projectseavieuw/Resources/Private/Language/locallang_db.xml:tx_projectseavieuw_domain_model_project.media',
@@ -111,13 +128,19 @@ $TCA['tx_projectseavieuw_domain_model_project'] = array(
 				'foreign_field' => 'project',
 				'maxitems'      => 9999,
 				'appearance' => array(
-					'collapseAll' => 0,
+					'collapseAll' => 1,
+					'expandSingle' => 1,
 					'levelLinksPosition' => 'top',
 					'showSynchronizationLink' => 1,
 					'showPossibleLocalizationRecords' => 1,
 					'showAllLocalizationLink' => 1
 				),
 			),
+		),
+		'sys_language_uid' => array (
+			'config' => array (
+				'type' => 'passthrough',
+			)
 		),
 	),
 );

@@ -1,21 +1,11 @@
-<f:layout name="Default" />
-
-This Template is responsible for displaying a single view for a domain object
-
-If you modify this template, do not forget to change the overwrite settings
-in /Configuration/ExtensionBuilder/settings.yaml:
-  Resources:
-    Private:
-      Templates:
-        Show.html: keep
-
-Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+<f:layout name="Default"/>
 
 <f:section name="main">
-<h1>Single View for Project</h1>
 
-<f:flashMessages />
-<f:render partial="Project/Properties" arguments="{project:project}" />
-<f:link.action action="list">Back to list</f:link.action><br />
-<f:link.action action="new">New Project</f:link.action>
+	List view projects
+	<h1>{project.title}</h1>
+	{media.layout}
+	<f:for each="{project.media}" as="media">
+		<f:render partial="Project/{media.layout}" arguments="{media : media}"/>
+	</f:for>
 </f:section>

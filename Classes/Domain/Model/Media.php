@@ -96,7 +96,10 @@ class Tx_Projectseavieuw_Domain_Model_Media extends Tx_Extbase_DomainObject_Abst
 	 * @return void
 	 */
 	public function setMedia($media) {
-		$this->media = $media;
+		$returnMedia = Tx_Projectseavieuw_Utility_ToolBox::mediaStringToArray($media);
+		var_dump($returnMedia);
+		die();
+		$this->media = $returnMedia;
 	}
 
 	/**

@@ -13,27 +13,13 @@ plugin.tx_projectseavieuw {
 	}
 }
 
-plugin.tx_projectseavieuw._CSS_DEFAULT_STYLE (
-	textarea.f3-form-error {
-		background-color:#FF9F9F;
-		border: 1px #FF0000 solid;
-	}
-
-	input.f3-form-error {
-		background-color:#FF9F9F;
-		border: 1px #FF0000 solid;
-	}
-
-	.tx-projectseavieuw table {
-		border-collapse:separate;
-		border-spacing:10px;
-	}
-
-	.tx-projectseavieuw table th {
-		font-weight:bold;
-	}
-
-	.tx-projectseavieuw table td {
-		vertical-align:top;
-	}
-)
+lib.tx_projectseavieuw = USER
+lib.tx_projectseavieuw {
+		userFunc = tx_extbase_core_bootstrap->run
+    	extensionName = Projectseavieuw
+    	controller = Project
+    	pluginName = Pi1
+    	action = show
+    	view =< plugin.tx_projectseavieuw.view
+    	settings =< plugin.tx_projectseavieuw.settings
+}

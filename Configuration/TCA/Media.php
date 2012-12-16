@@ -97,18 +97,29 @@ $TCA['tx_projectseavieuw_domain_model_media'] = array(
 			'exclude' => 0,
 			'label' => 'LLL:EXT:projectseavieuw/Resources/Private/Language/locallang_db.xml:tx_projectseavieuw_domain_model_media.layout',
 			'config' => array(
-				'type' => 'input',
-				'size' => 30,
-				'eval' => 'trim'
+				'type' => 'select',
+				'items' => array(
+					array('LLL:EXT:projectseavieuw/Resources/Private/Language/locallang_db.xml:tx_projectseavieuw_domain_model_media.layout.option.0', 'layout1'),
+					array('LLL:EXT:projectseavieuw/Resources/Private/Language/locallang_db.xml:tx_projectseavieuw_domain_model_media.layout.option.1', 'layout2'),
+					array('LLL:EXT:projectseavieuw/Resources/Private/Language/locallang_db.xml:tx_projectseavieuw_domain_model_media.layout.option.2', 'layout3'),
+					array('LLL:EXT:projectseavieuw/Resources/Private/Language/locallang_db.xml:tx_projectseavieuw_domain_model_media.layout.option.3', 'layout4'),
+				),
+				'minitems' => 0,
+				'maxitems' => 1,
 			),
 		),
 		'media' => array(
 			'exclude' => 0,
 			'label' => 'LLL:EXT:projectseavieuw/Resources/Private/Language/locallang_db.xml:tx_projectseavieuw_domain_model_media.media',
 			'config' => array(
-				'type' => 'input',
-				'size' => 30,
-				'eval' => 'trim'
+				'type' => 'group',
+				'internal_type' => 'file',
+				'allowed' => 'jpg, jpeg, png',
+				'uploadfolder' => 'uploads/tx_projects_seavieuw',
+				'show_thumbs' => TRUE,
+				'multiple' => TRUE,
+				'maxitems' => 5,
+				'autoSizeMax' => 30
 			),
 		),
 		'youtube_key' => array(
@@ -145,6 +156,21 @@ $TCA['tx_projectseavieuw_domain_model_media'] = array(
 			'config' => array(
 				'type' => 'passthrough',
 			),
+		),
+		'starttime' => array (
+			'config' => array (
+				'type' => 'passthrough',
+			)
+		),
+		'endtime' => array (
+			'config' => array (
+				'type' => 'passthrough',
+			)
+		),
+		'sys_language_uid' => array (
+			'config' => array (
+				'type' => 'passthrough',
+			)
 		),
 	),
 );

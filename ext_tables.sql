@@ -7,6 +7,8 @@ CREATE TABLE tx_projectseavieuw_domain_model_project (
 	pid int(11) DEFAULT '0' NOT NULL,
 
 	title varchar(255) DEFAULT '' NOT NULL,
+	password varchar(255) DEFAULT '' NOT NULL,
+	locked tinyint(1) unsigned DEFAULT '0' NOT NULL,
 	media int(11) unsigned DEFAULT '0' NOT NULL,
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,

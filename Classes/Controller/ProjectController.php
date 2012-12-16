@@ -4,7 +4,7 @@
  *  Copyright notice
  *
  *  (c) 2012 Ben van Kruistum <ben@u-creations.nl>, u-creations
- *  
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -57,6 +57,7 @@ class Tx_Projectseavieuw_Controller_ProjectController extends Tx_Extbase_MVC_Con
 	 */
 	public function listAction() {
 		$projects = $this->projectRepository->findAll();
+
 		$this->view->assign('projects', $projects);
 	}
 
@@ -66,9 +67,14 @@ class Tx_Projectseavieuw_Controller_ProjectController extends Tx_Extbase_MVC_Con
 	 * @param Tx_Projectseavieuw_Domain_Model_Project $project
 	 * @return void
 	 */
-	public function showAction(Tx_Projectseavieuw_Domain_Model_Project $project) {
+	public function showAction(Tx_Projectseavieuw_Domain_Model_Project $project = NULL) {
+		if(is_null($project)){
+			echo 'euh';
+			die();
+		}
 		$this->view->assign('project', $project);
 	}
 
 }
+
 ?>

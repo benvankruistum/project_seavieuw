@@ -5,7 +5,7 @@ if (!defined('TYPO3_MODE')) {
 
 Tx_Extbase_Utility_Extension::registerPlugin(
 	$_EXTKEY,
-	'Projectseavieuw',
+	'Pi1',
 	'projectSeavieuw'
 );
 
@@ -50,7 +50,7 @@ $TCA['tx_projectseavieuw_domain_model_media'] = array(
 		'crdate' => 'crdate',
 		'cruser_id' => 'cruser_id',
 		'dividers2tabs' => TRUE,
-
+		'hideTable' => TRUE ,
 		'versioningWS' => 2,
 		'versioning_followPages' => TRUE,
 		'origUid' => 't3_origuid',
@@ -63,7 +63,7 @@ $TCA['tx_projectseavieuw_domain_model_media'] = array(
 			'starttime' => 'starttime',
 			'endtime' => 'endtime',
 		),
-		'searchFields' => 'layout,media,youtube_key,text,',
+		'searchFields' => 'text,',
 		'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY) . 'Configuration/TCA/Media.php',
 		'iconfile' => t3lib_extMgm::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_projectseavieuw_domain_model_media.gif'
 	),
