@@ -1,11 +1,27 @@
 <f:layout name="Default"/>
 
 <f:section name="main">
-
-	List view projects
 	<h1>{project.title}</h1>
-	{media.layout}
-	<f:for each="{project.media}" as="media">
-		<f:render partial="Project/{media.layout}" arguments="{media : media, title:project.title}"/>
-	</f:for>
+	<f:if condition="{project.password}">
+		<f:then>
+		<p>Om deze pagina te bekijken is er een wachtwoord benodigd.</p>
+		<p>Voer in het onderstaande veld het verkregen wachtwoord in om de pagina te bekijken</p>
+		<f:form id="projectLoginForm" action="show">
+			<f:form.hidden name="action" value="show" />
+			<f:form.hidden name="project" value="{project.uid}" />
+			<f:form.hidden name="controller" value="Project" />
+
+			<f:form.password name="password" />
+
+			<f:form.submit name="enterPassword" value="openen" />
+		</f:form>
+		</f:then>
+		<f:else>
+			<f:for each="{project.media}" as="media">
+				<f:render partial="Project/{media.layout}" arguments="{media : media, title:project.title}"/>
+			</f:for>
+		</f:else>
+	</f:if>
+
+
 </f:section>

@@ -71,9 +71,65 @@ class Tx_Projectseavieuw_Controller_ProjectController extends Tx_Extbase_MVC_Con
 			echo 'euh';
 			die();
 		}
+
+		$this->handlePasswordCheck($this->request->getArguments(), $project->getPassword());
+
 		$this->view->assign('project', $project);
 	}
 
+	protected  function handlePasswordCheck($arguments, $password){
+		$key = 'Tx_Projectseavieuw';
+		$sessionVars = $this->restoreFromSession($key);
+		if($sessionVars['isSet']){
+			return TRUE;
+		}
+
+		if(isset($arguments['password'])){
+			$sessionArray = array('isSet'=> FALSE ,'retries'=>0);
+
+			if($sessionVars['retries'] > 3){
+				return FALSE;
+			}
+
+			if($arguments['password'] == $password){
+				$sessionArray['isSet'] = true;
+				$sessionArray['retries'] = 1;
+			}
+			else {
+				$sessionArray['retries']++;
+			}
+
+			$this->writeToSession($sessionArray,$key);
+
+			if($sessionArray['retries'] > 3){
+				return FALSE;
+			}
+			else {
+
+			}
+		}
+		else {
+			return FALSE;
+		}
+	}
+
+	protected function restoreFromSession($sessionKey) {
+		$sessionData = $GLOBALS['TSFE']->fe_user->getKey('ses', $sessionKey);
+		return unserialize($sessionData);
+	}
+
+	protected function writeToSession($object, $sessionKey) {
+		$sessionData = serialize($object);
+		$GLOBALS['TSFE']->fe_user->setKey('ses', $sessionKey, $sessionData);
+		$GLOBALS['TSFE']->fe_user->storeSessionData();
+		return $this;
+	}
+
+	protected function cleanUpSession($sessionKey) {
+		$GLOBALS['TSFE']->fe_user->setKey('ses', $sessionKey, NULL);
+		$GLOBALS['TSFE']->fe_user->storeSessionData();
+		return $this;
+	}
 }
 
 ?>
